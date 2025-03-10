@@ -1,0 +1,38 @@
+{
+    "device_logins": [
+        {
+            "id": "device_1234567890",
+            "device_code": "DEVICE-CODE-123",
+            "user_code": "USER-CODE-456",
+            "verification_uri": "http://localhost:3000/verify",
+            "expires_in": 1800,
+            "interval": 5,
+            "authorized": false,
+            "created_at": "2023-03-09T10:00:00Z"
+        }
+    ],
+    "tokens": [
+        {
+            "id": "token_1234567890",
+            "device_code": "DEVICE-CODE-123",
+            "access_token": "mock-access-token-123",
+            "token_type": "bearer",
+            "expires_in": 3600,
+            "refresh_token": "mock-refresh-token-456",
+            "scope": "read write"
+        }
+    ],
+    "notifications": [
+        {
+            "id": "notif_1234567890",
+            "type": "payment",
+            "timestamp": "2023-03-09T10:15:00Z",
+            "data": {
+                "amount": 1000,
+                "currency": "BRL",
+                "description": "Compra de teste",
+                "status": "approved"
+            }
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+version: '3.8'
+
+networks:
+  abacatepay-network:
+    driver: bridge
+
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: abacatepay-api
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./api/db.json:/app/db.json:ro
+    environment:
+      - NODE_ENV=development
+      - RECEIVER_URL=http://receiver:8080
+    networks:
+      - abacatepay-network
+    restart: unless-stopped
+
+  receiver:
+    build:
+      context: ./receiver
+      dockerfile: Dockerfile
+    container_name: abacatepay-receiver
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=development
+      - PORT=8080
+    networks:
+      - abacatepay-network
+    restart: unless-stopped
