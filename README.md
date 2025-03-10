@@ -1,7 +1,6 @@
 # AbacatePay Mock Server
 
-Esse servidor foi densenvolvido completamente por INTELIGENCIA ARTIFICIAL. Entao nao leve em Consideração a Qualidade do CODIGO!
-
+O codigo do servidor pode conter erros e bugs. foi desenvolvido apenas com o intuito de testar a  CLI AbacatePay.
 
 
 ## Estrutura do Projeto
